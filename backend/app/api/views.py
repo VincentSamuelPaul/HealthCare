@@ -24,5 +24,4 @@ def getRoutes(request):
         '/api/token',
         '/api/toekn/refresh',
     ]
-    print(context)
     return Response(context)
