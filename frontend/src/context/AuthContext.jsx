@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }) => {
         if (response.status === 200) {
             setAuthToken(data);
             setUser(jwtDecode(data.access));
-            localStorage.setItem('authTokens', JSON.stringify(data));
+            localStorage.setItem('authToken', JSON.stringify(data));
         } else {
             logout();
         };
@@ -63,6 +63,7 @@ export const AuthProvider = ({ children }) => {
         if (loading) {
             setLoading(false);
         }
+        console.log('updated')
     }
 
 
