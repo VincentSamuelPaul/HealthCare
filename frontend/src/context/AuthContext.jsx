@@ -34,6 +34,17 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
+    const signUp = async(e) => {
+        e.preventDefault();
+        const response = await fetch('http://127.0.0.1:8000/api/signup', {
+            method: 'POST',
+            header: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'username': e.target.username.value, 'password': e.target.password.value, 'email': e.target.email.value})
+        });
+    }
+
     const logout = () => {
         setAuthToken(null);
         setUser(null);
