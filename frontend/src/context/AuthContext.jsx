@@ -47,7 +47,6 @@ export const AuthProvider = ({ children }) => {
         },
         body:JSON.stringify({'username': e.target.username.value, 'password': e.target.password.value, 'email': e.target.email.value})
         });
-        const data = await response.json();
             if (response.status === 200) {
                 setMessage("SignUp done, login with your credentials")
                 setInUp(!inUp);

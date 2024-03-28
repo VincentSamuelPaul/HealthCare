@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import AuthContext from '../context/AuthContext'
 import '../styles/main.css';
 import LoginSignup from '../components/LoginSignup';
@@ -6,7 +6,6 @@ import LoginSignup from '../components/LoginSignup';
 const LoginPage = () => {
 
     const {loginUser, signUp, message, inUp, setInUp} = useContext(AuthContext);
-    // const [inUp, setInUp] = useState(0);
     console.log(message);
 
     return (
