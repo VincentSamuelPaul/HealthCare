@@ -6,7 +6,6 @@ import LoginSignup from '../components/LoginSignup';
 const LoginPage = () => {
 
     const {loginUser, signUp, message, inUp, setInUp} = useContext(AuthContext);
-    console.log(message);
 
     return (
         <div className='container'>
