@@ -13,11 +13,11 @@ const LoginPage = () => {
             <div className='inup'>
             <LoginSignup inUp={inUp} setInUp={setInUp} />
                 <form id='loginForm' onSubmit={signUp} method='POST'>
-                    <label for='username'>Username:</label>
+                    <label htmlFor='username'>Username:</label>
                     <input type='text' id='username' required autoComplete='off'/>
-                    <label for='password'>Password:</label>
+                    <label htmlFor='password'>Password:</label>
                     <input type="password" id="password" name="password" required autoComplete='off'></input>
-                    <label for='password'>Email:</label>
+                    <label htmlFor='password'>Email:</label>
                     <input type="email" id="email" name="email" required autoComplete='off'></input>
                     <div>{message}</div>
                     { !inUp ? <button type='submit'>Login</button> : <button type='submit'>SignUp</button> }
@@ -26,9 +26,9 @@ const LoginPage = () => {
             <div className='inup'>
             <LoginSignup inUp={inUp} setInUp={setInUp}/>
                 <form id='loginForm' onSubmit={loginUser} method='POST'>
-                    <label for='username'>Username:</label>
+                    <label htmlFor='username'>Username:</label>
                     <input type='text' id='username' required autoComplete='off'/>
-                    <label for='password'>Password:</label>
+                    <label htmlFor='password'>Password:</label>
                     <input type="password" id="password" name="password" required autoComplete='off'></input>
                     <div>{message}</div>
                     { inUp ? <button type='submit'>SignUp</button> : <button type='submit'>Login</button> }
