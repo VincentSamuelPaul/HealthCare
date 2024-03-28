@@ -3,7 +3,25 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; 
+}
+
+body::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e5e5f7;
+    opacity: 0.2;
+    background-image: linear-gradient(#4CAF50 1.4px, transparent 1.4px), 
+                        linear-gradient(90deg, #4CAF50 1.4px, transparent 1.4px), 
+                        linear-gradient(#4CAF50 0.7px, transparent 0.7px), 
+                        linear-gradient(90deg, #4CAF50 0.7px, #e5e5f7 0.7px);
+    background-size: 35px 35px, 35px 35px, 7px 7px, 7px 7px;
+    background-position: -1.4px -1.4px, -1.4px -1.4px, -0.7px -0.7px, -0.7px -0.7px;
 }
 
 .container {
@@ -33,6 +51,8 @@ h2 {
 }
 
 .inup {
+    position: relative;
+    z-index: 1;
     width: 400px;
     padding: 20px;
     background: linear-gradient(to right, #11998e, #38ef7d);
@@ -44,6 +64,9 @@ h2 {
     box-shadow: rgba(76, 175, 80, 0.26) 5px 5px, rgba(76, 175, 80, 0.24) 10px 10px, rgba(76, 175, 80, 0.18) 15px 15px;
     margin-top: 70px;
 }
+
+
+
 
 h3 {
     margin-bottom: 20px;
