@@ -30,7 +30,7 @@ const LoginPage = () => {
                     <input type="password" id="password" name="password" required autoComplete='off'></input>
                     <label form='password'>Email:</label>
                     <input type="email" id="email" name="email" required autoComplete='off'></input>
-                    <button type="submit">Login</button>
+                    { !inUp ? <button type='submit'>Login</button> : <button type='submit'>SignUp</button> }
                 </form>
             </div> :
             <div className='inup'>
@@ -41,7 +41,8 @@ const LoginPage = () => {
                     <label form='password'>Password:</label>
                     <input type="password" id="password" name="password" required autoComplete='off'></input>
                     
-                    <button type="submit">Login</button>
+                    {/* <button type="submit">{inUp ? <>SignUp</> : <>Login</>}</button> */}
+                    { inUp ? <button type='submit'>SignUp</button> : <button type='submit'>Login</button> }
                 </form>
             </div>
             }
