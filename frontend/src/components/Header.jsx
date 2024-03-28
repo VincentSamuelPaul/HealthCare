@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
+import '../styles/Header.css';
 
 const Header = () => {
 
@@ -8,15 +9,13 @@ const Header = () => {
     
 
     return (
-        <div>
-            <Link to='/'>Home</Link>
-            <span>|</span>
+        <div className='header'>
+            <Link className='link' to='/'>MedApp</Link>
             {user ? (
-                <Link onClick={logout} to='/login'>Logout</Link>
+                <Link className='link' onClick={logout} to='/login'>Logout</Link>
             ): (
-                <Link to='/login'>Login</Link>
+                <Link className='link' to='/login'>Login</Link>
             )}
-            {user && <p>Hello {user.username}</p>}
             
         </div>
     )

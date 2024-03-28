@@ -10,7 +10,6 @@ export const AuthProvider = ({ children }) => {
 
     const navigate = useNavigate();
 
-    // localStorage.getItem('authToken') ? JSON.parse(localStorage.getItem('authToken')) : null
     const [user, setUser] = useState(() => localStorage.getItem('authToken') ? jwtDecode(localStorage.getItem('authToken')).username : null);
     const [authToken, setAuthToken] = useState(() => localStorage.getItem('authToken') ? JSON.parse(localStorage.getItem('authToken')) : null);
     const [loading, setLoading] = useState(true);
@@ -63,7 +62,6 @@ export const AuthProvider = ({ children }) => {
         if (loading) {
             setLoading(false);
         }
-        console.log('updated')
     }
 
 
