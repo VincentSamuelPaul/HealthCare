@@ -3,7 +3,7 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; 
+    background-color: #f4f4f4;
 }
 
 body::before {
@@ -16,10 +16,7 @@ body::before {
     height: 100%;
     background-color: #e5e5f7;
     opacity: 0.2;
-    background-image: linear-gradient(#4CAF50 1.4px, transparent 1.4px), 
-                        linear-gradient(90deg, #4CAF50 1.4px, transparent 1.4px), 
-                        linear-gradient(#4CAF50 0.7px, transparent 0.7px), 
-                        linear-gradient(90deg, #4CAF50 0.7px, #e5e5f7 0.7px);
+    background-image: linear-gradient(#4CAF50 1.4px, transparent 1.4px), linear-gradient(90deg, #4CAF50 1.4px, transparent 1.4px), linear-gradient(#4CAF50 0.7px, transparent 0.7px), linear-gradient(90deg, #4CAF50 0.7px, #e5e5f7 0.7px);
     background-size: 35px 35px, 35px 35px, 7px 7px, 7px 7px;
     background-position: -1.4px -1.4px, -1.4px -1.4px, -0.7px -0.7px, -0.7px -0.7px;
 }
@@ -63,9 +60,6 @@ h2 {
     box-shadow: rgba(76, 175, 80, 0.26) 5px 5px, rgba(76, 175, 80, 0.24) 10px 10px, rgba(76, 175, 80, 0.18) 15px 15px;
     margin-top: 70px;
 }
-
-
-
 
 h3 {
     margin-bottom: 20px;
@@ -115,7 +109,7 @@ button:hover {
 
 .loginsignup h2 {
     padding: 15px;
-    width: 20%;
+    width: 35%;
 }
 
 .loginsignup h2:hover {
@@ -124,7 +118,7 @@ button:hover {
 
 .title {
     border-bottom: solid 5px #307470;
-    background-color: rgba(3, 3, 3, 0.05);
+    /* background-color: rgba(3, 3, 3, 0.05); */
     padding: 15px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }

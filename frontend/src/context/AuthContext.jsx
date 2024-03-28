@@ -10,6 +10,11 @@ export const AuthProvider = ({ children }) => {
 
     const navigate = useNavigate();
 
+    const [message, setMessage] = useState('');
+
+    const [inUp, setInUp] = useState(false);
+
+
     const [user, setUser] = useState(() => localStorage.getItem('authToken') ? jwtDecode(localStorage.getItem('authToken')).username : null);
     const [authToken, setAuthToken] = useState(() => localStorage.getItem('authToken') ? JSON.parse(localStorage.getItem('authToken')) : null);
     const [loading, setLoading] = useState(true);
@@ -29,27 +34,31 @@ export const AuthProvider = ({ children }) => {
             setUser(jwtDecode(data.access));
             localStorage.setItem('authToken', JSON.stringify(data));
             navigate('/');
-        } else {
-            alert("Something went wrong");
         }
+        setMessage('');
     }
 
     const signUp = async(e) => {
         e.preventDefault();
-        const response = await fetch('http://127.0.0.1:8000/api/signup', {
-            method: 'POST',
-            header: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({'username': e.target.username.value, 'password': e.target.password.value, 'email': e.target.email.value})
+        const response = await fetch('http://127.0.0.1:8000/api/signup/', {
+        method:'POST',
+        headers:{
+            'Content-Type':'application/json',
+        },
+        body:JSON.stringify({'username': e.target.username.value, 'password': e.target.password.value, 'email': e.target.email.value})
         });
+        const data = await response.json();
+            if (response.status === 200) {
+                setMessage("SignUp done, login with your credentials")
+                setInUp(!inUp);
+        }
     }
 
     const logout = () => {
         setAuthToken(null);
         setUser(null);
         localStorage.removeItem('authToken');
-        navigate('/login');
+        navigate('/');
     }
 
     let updateToken = async () => {
@@ -77,10 +86,14 @@ export const AuthProvider = ({ children }) => {
 
 
     let contextData = {
+        inUp: inUp,
+        setInUp: setInUp,
         user: user,
+        message: message,
         authToken: authToken,
         loginUser: loginUser,
         logout: logout,
+        signUp: signUp
     }
 
     useEffect(() => {
