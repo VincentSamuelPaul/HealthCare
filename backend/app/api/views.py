@@ -55,4 +55,4 @@ def signUp(request):
     else:
         user = User.objects.create_user(request.data['username'], request.data['email'], request.data['password'])
         user.save()
-        return Response({'message':'Sign Up done, Login with your credentials'})
+        return Response({'message':'Sign Up done, Login with your credentials', 'status':'success'})
