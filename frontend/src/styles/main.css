@@ -57,8 +57,12 @@ h2 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     animation: fadeIn 0.5s ease forwards;
-    box-shadow: rgba(76, 175, 80, 0.26) 5px 5px, rgba(76, 175, 80, 0.24) 10px 10px, rgba(76, 175, 80, 0.18) 15px 15px;
     margin-top: 70px;
+    transition: box-shadow 0.2s;
+}
+
+.inup:hover{
+    box-shadow: rgba(76, 175, 80, 0.26) 5px 5px, rgba(76, 175, 80, 0.24) 10px 10px, rgba(76, 175, 80, 0.18) 15px 15px;
 }
 
 h3 {
