@@ -45,14 +45,14 @@ def signUp(request):
     # print(request.data)
     # return Response()
     if User.objects.filter(username=request.data['username']):
-        return Response({'message':f"@{request.data['username']} is already in use"})
+        return Response({'message':f"@{request.data['username']} is already in use", 'status':'error'})
     if request.data['username'] == '' or len(request.data['username']) < 8:
-        return Response({'message':"Username can't be null and less than 8 characters"})
+        return Response({'message':"Username can't be null or less than 8 characters", 'status':'error'})
     if len(request.data['password']) < 8:
-        return Response({'message':"Password must be more than 8 characters"})
+        return Response({'message':"Password must be more than 8 characters", 'status':'error'})
     if request.data['email'] == '':
-        return Response({'message':"Enter a valid email to receive API key"})
+        return Response({'message':"Enter a valid email", 'status':'error'})
     else:
         user = User.objects.create_user(request.data['username'], request.data['email'], request.data['password'])
         user.save()
-        return Response({'username':request.data['username']})
+        return Response({'message':'Sign Up done, Login with your credentials'})

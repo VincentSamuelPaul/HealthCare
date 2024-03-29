@@ -47,10 +47,17 @@ export const AuthProvider = ({ children }) => {
         },
         body:JSON.stringify({'username': e.target.username.value, 'password': e.target.password.value, 'email': e.target.email.value})
         });
-            if (response.status === 200) {
-                setMessage("SignUp done, login with your credentials")
+        const data = await response.json();
+        if (response.status === 200) {
+            if(data.status !== 'error') {
+                setMessage(data.message)
                 setInUp(!inUp);
+            }
+            else {
+                setMessage(data.message)
+            }
         }
+        console.log(data.message);
     }
 
     const logout = () => {
