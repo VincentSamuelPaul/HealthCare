@@ -42,8 +42,6 @@ def getNotes(request):
 
 @api_view(['POST'])
 def signUp(request):
-    # print(request.data)
-    # return Response()
     if User.objects.filter(username=request.data['username']):
         return Response({'message':f"@{request.data['username']} is already in use", 'status':'error'})
     if request.data['username'] == '' or len(request.data['username']) < 8:
