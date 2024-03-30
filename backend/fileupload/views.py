@@ -23,7 +23,6 @@ def getRoutes(request):
 def uploadFile(request):
     print('hello')
     print(request.FILES)
-    parser_classes = [MultiPartParser, FormParser]
-    serializer = FileUploadSerializer(data=request.FILES['fileName'])
     file = File(file=request.FILES['fileName'])
     file.save()
+    return Response("Done")

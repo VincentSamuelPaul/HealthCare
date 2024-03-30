@@ -9,7 +9,6 @@ const FileUpload = () => {
 
     const uploadFile = async() => {
         const file = fileInput.files[0];
-        console.log(file);
 
         const formData = new FormData()
         formData.append("fileName" ,file);
@@ -19,7 +18,6 @@ const FileUpload = () => {
             body: formData,
         })
         const data = await response.json();
-        console.log(data);
     }
 
     return (
