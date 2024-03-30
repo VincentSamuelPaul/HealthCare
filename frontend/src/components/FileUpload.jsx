@@ -3,11 +3,10 @@ import '../styles/FileUpload.css';
 
 const FileUpload = () => {
 
-    // const [file, setFile] = useState(null);
-
-    const fileInput = document.getElementById("file");
+    const [message, setMessage] = useState('')
 
     const uploadFile = async() => {
+        const fileInput = document.getElementById("file");
         const file = fileInput.files[0];
 
         const formData = new FormData()
@@ -18,12 +17,14 @@ const FileUpload = () => {
             body: formData,
         })
         const data = await response.json();
+        setMessage(data);
     }
 
     return (
         <div className='fileupload'>
             <input type='file' id='file' accept="application/pdf,application/vnd.ms-excel"/>
             <button onClick={uploadFile}>Submit</button>
+            <h3>{message}</h3>
         </div>
     )
 }

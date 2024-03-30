@@ -34,8 +34,11 @@ export const AuthProvider = ({ children }) => {
             setUser(jwtDecode(data.access));
             localStorage.setItem('authToken', JSON.stringify(data));
             navigate('/');
+            setMessage('');
+        } else {
+            console.log(data.detail);
+            setMessage(data.detail);
         }
-        setMessage('');
     }
 
     const signUp = async(e) => {
