@@ -36,7 +36,6 @@ export const AuthProvider = ({ children }) => {
             navigate('/');
             setMessage('');
         } else {
-            console.log(data.detail);
             setMessage(data.detail);
         }
     }
